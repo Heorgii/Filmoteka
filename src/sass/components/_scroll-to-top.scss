@@ -1,0 +1,54 @@
+.fix-down {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    & .container {
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.scroll-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+
+    width: 20px;
+    height: 20px;
+
+    @include mq(tablet) {
+        width: 40px;
+        height: 40px;
+    }
+
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: transform var(--anim),
+    background-color var(--anim);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+        background-color: transparent;
+    }
+}
+
+.arrow-top {
+    fill: var(--bgc-accent);
+    opacity: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    @include mq(mobile) {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.scroll-to-top.is-hidden {
+    display: none;
+}

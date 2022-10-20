@@ -1,0 +1,24 @@
+<div class="menu__buttom container">
+  <button class="menuBtn regist" type="button" data-modal-user-open>
+    <svg class="menu__buttom-icon" width="40" height="40">
+      <use href="./image/sprite.svg#registration"></use>
+    </svg>
+  </button>
+  <button class="menuBtn enter is-hidden" type="button" data-user>
+    <svg class="menu__buttom-icon" width="40" height="40">
+      <use href="./image/sprite.svg#enter"></use>
+    </svg>
+  </button>
+  <include src="./partials/popup.html"></include>
+
+  <button class="menuBtn" type="button" id="toggle-theme-btn">
+    <svg class="menu__buttom-icon moon is-hidden" width="40" height="40" id="toggle-theme-icon">
+      <use href="./image/sprite.svg#dark-mode"></use>
+    </svg>
+    <svg class="menu__buttom-icon sun " width="40" height="40" id="toggle-theme-icon">
+      <use href="./image/sprite.svg#sun"></use>
+    </svg>
+  </button>
+
+  <include src="./partials/menu-genres.html"></include>
+</div>

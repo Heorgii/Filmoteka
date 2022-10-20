@@ -1,0 +1,27 @@
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/placeholders';
+
+@import './base/common';
+@import './base/global';
+@import './base/reset';
+@import './base/animations';
+@import './base/container';
+@import './base/title';
+
+@import './components/scroll-to-top';
+@import './components/visually-hidden';
+@import './components/backdrop';
+@import './components/button';
+@import './components/scrollbar';
+@import './components/pagination';
+@import './components/spinner';
+
+@import './layouts/header';
+@import './layouts/footer';
+@import './layouts/modal-team';
+@import './layouts/gallery';
+@import './layouts/modal';
+@import './layouts/menu-genres';
+@import './layouts/popup';
+@import './layouts/icons';

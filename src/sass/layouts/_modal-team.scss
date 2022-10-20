@@ -1,0 +1,215 @@
+.modal-team {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 15;
+    transform: translate(-50%, -50%) scale(1);
+
+    padding: 16px;
+
+    width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+
+    background: var(--bgc-main);
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    overflow-y: auto;
+    opacity: 1;
+    transition: transform var(--anim), visibility var(--anim),
+        opacity var(--anim);
+
+    .backdrop.is-hidden>& {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    @include mq(mobile) {
+        max-width: 400px;
+        max-height: calc(100vh - 40px);
+    }
+
+    @include mq(tablet) {
+        max-width: 800px;
+        max-height: calc(100vh - 40px);
+        padding: 30px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+
+        @include mq(desktop) {
+            gap: 36px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        max-width: 100px;
+
+        @include mq(desktop) {
+            max-width: 120px;
+        }
+    }
+
+    &__image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+
+        border-radius: 5px 5px 50px 5px;
+        box-shadow: 5px 5px 11px -2px #000;
+
+        @include mq(desktop) {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 5px 5px 70px 5px;
+        }
+    }
+
+    &__info {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.15;
+        text-align: center;
+
+        @include mq(desktop) {
+            font-size: 14px;
+        }
+    }
+
+    &__member {
+        margin-bottom: 4px;
+    }
+
+    &__role {
+        margin-bottom: 4px;
+        color: var(--cl-txt-accent);
+    }
+
+    &__link {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        z-index: 16;
+
+        @include mq(desktop) {
+            top: 110px;
+        }
+
+        &:hover,
+        &:focus {
+            fill: var(--cl-txt-accent);
+        }
+
+        .modal-team__item:hover &,
+        .modal-team__item:focus & {
+            top: 125px;
+
+            @include mq(desktop) {
+                top: 150px;
+            }
+        }
+    }
+
+    &__descr {
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        height: 100%;
+
+        background-color: var(--bgc-main);
+        border-radius: 4px;
+        border-left: 1px solid #54545488;
+        border-top: 1px solid #54545488;
+
+        transition: transform var(--slow-anim);
+        overflow: hidden;
+
+        &-list {
+            padding: 5px 5px 5px 16px;
+        }
+
+        &-text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.33;
+            color: var(--cl-txt-main);
+
+            @include mq(desktop) {
+                font-size: 15px;
+            }
+        }
+
+        .modal-team__item:hover &,
+        .modal-team__item:focus & {
+            transform: translateY(-100%);
+        }
+
+    }
+
+    &__btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 15;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 40px;
+
+        color: var(--cl-txt-main);
+        background: transparent;
+        border: none;
+
+        cursor: pointer;
+        transition: color var(--anim);
+
+        &:hover,
+        &:focus {
+            color: var(--cl-txt-accent);
+        }
+    }
+
+    &__icon-close {
+        fill: currentColor;
+        transition: color var(--anim);
+
+    }
+
+    &__icon {
+        width: 15px;
+        height: 15px;
+        fill: var(--bgc-black);
+
+        @include mq(desktop) {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            fill: var(--cl-txt-accent);
+        }
+    }
+}
